@@ -110,7 +110,7 @@ namespace Leap.Unity.GraphicalRenderer {
     protected RendererTextureData _packedTextures;
 
     //#### Sprite/Texture Remapping ####
-    [SerializeField]
+    [SerializeField, HideInInspector]
     private AtlasUvs _atlasUvs;
 
     //#### Tinting ####
@@ -245,7 +245,7 @@ namespace Leap.Unity.GraphicalRenderer {
     #region UPDATE
     protected virtual void updateTinting() {
       foreach (var tintFeature in _tintFeatures) {
-        if (!tintFeature.isDirty) continue;
+        if (!tintFeature.isDirtyOrEditTime) continue;
 
         using (new ProfilerSample("Update Tinting")) {
           tintFeature.featureData.Query().Select(d => (Vector4)d.color).FillList(_tintColors);
@@ -256,7 +256,7 @@ namespace Leap.Unity.GraphicalRenderer {
 
     protected virtual void updateBlendShapes() {
       foreach (var blendShapeFeature in _blendShapeFeatures) {
-        if (!blendShapeFeature.isDirty) continue;
+        if (!blendShapeFeature.isDirtyOrEditTime) continue;
 
         using (new ProfilerSample("Update Blend Shapes")) {
           blendShapeFeature.featureData.Query().Select(d => d.amount).FillList(_blendShapeAmounts);
@@ -268,21 +268,21 @@ namespace Leap.Unity.GraphicalRenderer {
     protected virtual void updateCustomChannels() {
       using (new ProfilerSample("Update Custom Channels")) {
         foreach (var floatChannelFeature in _floatChannelFeatures) {
-          if (!floatChannelFeature.isDirty) continue;
+          if (!floatChannelFeature.isDirtyOrEditTime) continue;
 
           floatChannelFeature.featureData.Query().Select(d => d.value).FillList(_customFloatChannelData);
           _material.SetFloatArraySafe(floatChannelFeature.channelName, _customFloatChannelData);
         }
 
         foreach (var vectorChannelFeature in _vectorChannelFeatures) {
-          if (!vectorChannelFeature.isDirty) continue;
+          if (!vectorChannelFeature.isDirtyOrEditTime) continue;
 
           vectorChannelFeature.featureData.Query().Select(d => d.value).FillList(_customVectorChannelData);
           _material.SetVectorArraySafe(vectorChannelFeature.channelName, _customVectorChannelData);
         }
 
         foreach (var colorChannelFeature in _colorChannelFeatures) {
-          if (!colorChannelFeature.isDirty) continue;
+          if (!colorChannelFeature.isDirtyOrEditTime) continue;
 
           colorChannelFeature.featureData.Query().Select(d => d.value).FillList(_customColorChannelData);
           _material.SetColorArraySafe(colorChannelFeature.channelName, _customColorChannelData);

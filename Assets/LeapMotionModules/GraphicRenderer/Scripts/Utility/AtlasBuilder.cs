@@ -64,7 +64,7 @@ namespace Leap.Unity.GraphicalRenderer {
 
     [MinValue(0)]
     [EditTimeOnly, SerializeField]
-    private int _border = 1;
+    private int _border = 0;
 
     [MinValue(0)]
     [EditTimeOnly, SerializeField]
