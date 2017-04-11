@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-using Leap.Unity.GraphicalRenderer;
+
 namespace Leap.Unity.UI.Interaction {
 
   /// <summary>
@@ -15,8 +14,24 @@ namespace Leap.Unity.UI.Interaction {
     public float toggledRestingHeight = 0.25f;
 
     [Space]
+    private bool _toggled = false;
+
     ///<summary> Whether or not this toggle is currently toggled. </summary>
-    public bool toggled = false;
+    public bool toggled {
+      get {
+        return _toggled;
+      }
+      set {
+        if (_toggled != value) {
+          toggled = value;
+          toggleEvent.Invoke(toggled);
+          restingHeight = toggled ? toggledRestingHeight : _originalRestingHeight;
+          rigidbody.WakeUp();
+          depressedThisFrame = value;
+          unDepressedThisFrame = !value;
+        }
+      }
+    }
 
     public class BoolEvent : UnityEvent<bool> { }
     ///<summary> Triggered when this toggle is togggled. </summary>
@@ -28,18 +43,18 @@ namespace Leap.Unity.UI.Interaction {
     protected override void Start() {
       base.Start();
       _originalRestingHeight = restingHeight;
+    }
 
+    protected virtual void OnEnable() {
       OnPress.AddListener(OnPressed);
     }
 
-    void OnPressed() {
-      toggled = !toggled;
-      toggleEvent.Invoke(toggled);
-      restingHeight = toggled ? toggledRestingHeight : _originalRestingHeight;
+    protected virtual void OnDisable() {
+      OnPress.RemoveListener(OnPressed);
     }
 
-    void OnDestroy() {
-      OnPress.RemoveAllListeners();
+    private void OnPressed() {
+      toggled = !toggled;
     }
   }
 }

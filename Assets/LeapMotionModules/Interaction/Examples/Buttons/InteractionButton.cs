@@ -47,6 +47,16 @@ namespace Leap.Unity.UI.Interaction {
     ///<summary> The physical position of this element in local space; may diverge from the graphical position. </summary>
     protected Vector3 localPhysicsPosition;
 
+
+#if UNITY_EDITOR
+    new
+#endif
+    protected Rigidbody rigidbody {
+      get {
+        return _body;
+      }
+    }
+
     private Rigidbody _body;
     private Rigidbody _lastDepressor;
     private Vector3 _localDepressorPosition;
