@@ -11,7 +11,7 @@ public class HSVTextureGen : MonoBehaviour {
     Texture2D tex = new Texture2D(resolution, resolution, TextureFormat.ARGB32, mipmap: false, linear: true);
     for (int x = 0; x < resolution; x++) {
       for (int y = 0; y < resolution; y++) {
-        Color c = new Color(x / (resolution - 1.0f), y / (resolution - 1.0f), 1, 1);
+        Color c = Color.HSVToRGB(0, x / (resolution - 1.0f), y / (resolution - 1.0f));
         tex.SetPixel(x, y, c);
       }
     }

@@ -23,7 +23,7 @@ namespace Leap.Unity.UI.Interaction {
       }
       set {
         if (_toggled != value) {
-          toggled = value;
+          _toggled = value;
           toggleEvent.Invoke(toggled);
           restingHeight = toggled ? toggledRestingHeight : _originalRestingHeight;
           rigidbody.WakeUp();
