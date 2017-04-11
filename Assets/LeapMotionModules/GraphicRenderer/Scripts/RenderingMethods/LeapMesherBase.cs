@@ -52,6 +52,8 @@ namespace Leap.Unity.GraphicalRenderer {
       }
     }
 
+    public Action<Texture2D, AtlasUvs> OnPostProcessAtlas;
+
     #region INSPECTOR FIELDS
     //BEGIN MESH SETTINGS
     [EditTimeOnly, SerializeField, HideInInspector]
@@ -141,8 +143,27 @@ namespace Leap.Unity.GraphicalRenderer {
         Texture2D[] packedTextures;
         _atlas.RebuildAtlas(progress, out packedTextures, out _atlasUvs);
 
-        progress.Begin(2, "", "", () => {
+
+
+        progress.Begin(3, "", "", () => {
+          progress.Step("Post-Process Atlas");
+          if (OnPostProcessAtlas != null) {
+            for (int i = 0; i < packedTextures.Length; i++) {
+              try {
+                OnPostProcessAtlas(packedTextures[i], _atlasUvs);
+              } catch (Exception e) {
+                Debug.LogException(e);
+              }
+            }
+          }
           progress.Step("Saving To Asset");
+
+          //Now that all post-process has finished, finally mark no longer readable
+          //Don't change the mipmaps because a post process might have uploaded custom data
+          for (int i = 0; i < packedTextures.Length; i++) {
+            packedTextures[i].Apply(updateMipmaps: false, makeNoLongerReadable: true);
+          }
+
           _packedTextures.AssignTextures(packedTextures, _textureFeatures.Query().Select(f => f.propertyName).ToArray());
 
           progress.Begin(_textureFeatures.Count, "", "Loading Into Scene", () => {
