@@ -150,6 +150,8 @@ namespace Leap.Unity.GraphicalRenderer {
       }
     }
 
+    public float scale = 0.1f;
+
     private List<TextWrapper.Line> _tempLines = new List<TextWrapper.Line>();
     private List<Vector3> _verts = new List<Vector3>();
     private List<Vector4> _uvs = new List<Vector4>();
@@ -167,7 +169,7 @@ namespace Leap.Unity.GraphicalRenderer {
       var textGraphic = graphic as LeapTextGraphic;
       var text = textGraphic.text;
 
-      float _charScale = 0.1f / _dynamicPixelsPerUnit;
+      float _charScale = scale / _dynamicPixelsPerUnit;
       float _scale = _charScale * graphic.fontSize / _font.fontSize;
       float lineHeight = _scale * textGraphic.lineSpacing * _font.lineHeight * _dynamicPixelsPerUnit;
 
