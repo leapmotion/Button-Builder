@@ -107,10 +107,10 @@ namespace Leap.Unity.UI.Interaction {
         if (isDepressed && behaviour.isPrimaryHovered && _lastDepressor != null) {
           Vector3 curLocalDepressorPos = transform.parent.InverseTransformPoint(_lastDepressor.position);
           Vector3 origLocalDepressorPos = transform.parent.InverseTransformPoint(transform.TransformPoint(_localDepressorPosition));
-          localPhysicsVelocity = Vector3.back * 5f;
+          localPhysicsVelocity = Vector3.back * 0.05f / transform.parent.lossyScale.z;
           localPhysicsPosition = GetDepressedConstrainedLocalPosition(curLocalDepressorPos - origLocalDepressorPos);
         } else {
-          localPhysicsVelocity += Vector3.forward * Mathf.Clamp(((initialLocalPosition.z - Mathf.Lerp(minMaxHeight.x, minMaxHeight.y, restingHeight) - localPhysicsPosition.z) / transform.parent.lossyScale.z), -5f, 5f);
+          localPhysicsVelocity += 0.1f * Vector3.forward * (initialLocalPosition.z - Mathf.Lerp(minMaxHeight.x, minMaxHeight.y, restingHeight) - localPhysicsPosition.z) / Time.fixedDeltaTime;
         }
 
         // Transform the local physics back into world space
