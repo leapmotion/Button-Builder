@@ -22,7 +22,7 @@
 
 			sampler2D _MainTex;
 
-      DEFINE_FLOAT_CHANNEL(_HueChanne);
+      DEFINE_FLOAT_CHANNEL(_HueChannel);
 
       struct v2f_custom {
         V2F_GRAPHICAL
@@ -41,7 +41,7 @@
         v2f_custom o;
         APPLY_BAKED_GRAPHICS(v, o);
 
-        o.hue = getChannel(_HueChanne);
+        o.hue = getChannel(_HueChannel);
 
         return o;
       }

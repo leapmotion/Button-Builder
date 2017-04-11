@@ -509,34 +509,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 1734269443}
   space: {fileID: 1734269443}
---- !u!21 &370156445
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Procedural Graphic Material
-  m_Shader: {fileID: 4800000, guid: 82ce43883d5999342a8512dd45ae94e4, type: 3}
-  m_ShaderKeywords: GRAPHIC_RENDERER_MOVEMENT_TRANSLATION GRAPHIC_RENDERER_VERTEX_UV_0
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 28502416273019928, guid: c457e903b69c8f142beb9d5583445241,
-          type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex2:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors: []
 --- !u!1 &431526070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,7 +1285,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 370156445}
+  - {fileID: 1650968923}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1338,7 +1310,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1310197122}
-  m_Mesh: {fileID: 43539599595885994, guid: c4a15a71668654c468ac4b1fb3ad1375, type: 2}
+  m_Mesh: {fileID: 43287014880629872, guid: c4a15a71668654c468ac4b1fb3ad1375, type: 2}
 --- !u!4 &1310197125
 Transform:
   m_ObjectHideFlags: 0
@@ -1467,6 +1439,34 @@ MonoBehaviour:
   graphic: {fileID: 1551318640}
   feature: {fileID: 1734269444}
   texture: {fileID: 2800000, guid: 93f4f81256c947642a93d907d828ee98, type: 3}
+--- !u!21 &1650968923
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Procedural Graphic Material
+  m_Shader: {fileID: 4800000, guid: 82ce43883d5999342a8512dd45ae94e4, type: 3}
+  m_ShaderKeywords: GRAPHIC_RENDERER_MOVEMENT_TRANSLATION GRAPHIC_RENDERER_VERTEX_UV_0
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 28502416273019928, guid: c457e903b69c8f142beb9d5583445241,
+          type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
 --- !u!1 &1669431069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,7 +1627,7 @@ MonoBehaviour:
   - {fileID: 568781618}
   - {fileID: 431526073}
   - {fileID: 287020741}
-  _channelName: _HueChanne
+  _channelName: _HueChannel
 --- !u!114 &1734269439
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1773,7 +1773,7 @@ MonoBehaviour:
     _filterMode: 0
     _format: 5
     _maxAtlasSize: 4096
-  _material: {fileID: 370156445}
+  _material: {fileID: 1650968923}
   _meshes: {fileID: 11400000, guid: c4a15a71668654c468ac4b1fb3ad1375, type: 2}
   _packedTextures: {fileID: 11400000, guid: c457e903b69c8f142beb9d5583445241, type: 2}
   _atlasUvs:
