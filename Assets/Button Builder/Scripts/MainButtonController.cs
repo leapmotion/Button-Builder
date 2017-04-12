@@ -92,7 +92,8 @@ public class MainButtonController : MonoBehaviour {
       } else if (_soundPack3Toggle.toggled) {
         return _soundPack3;
       } else {
-        return default(SoundPack);
+        //DEFAULT CASE
+        return _soundPack0;
       }
     }
   }
@@ -153,30 +154,30 @@ public class MainButtonController : MonoBehaviour {
   private delegate void ColorDelegate(ref Vector3 hsv);
 
   [Serializable]
-  public struct SoundPack {
+  public class SoundPack {
     [SerializeField]
     private AudioClip _hoverSound;
 
     [SerializeField]
-    private float _hoverVolume;
+    private float _hoverVolume = 1;
 
     [SerializeField]
     private AudioClip _touchSound;
 
     [SerializeField]
-    private float _touchVolume;
+    private float _touchVolume = 1;
 
     [SerializeField]
     private AudioClip _pressSound;
 
     [SerializeField]
-    private float _pressVolume;
+    private float _pressVolume = 1;
 
     [SerializeField]
     private AudioClip _releaseSound;
 
     [SerializeField]
-    private float _releaseVolume;
+    private float _releaseVolume = 1;
 
     public void PlayHoverSound(Vector3 position) {
       playSound(_hoverSound, _hoverVolume, position);
