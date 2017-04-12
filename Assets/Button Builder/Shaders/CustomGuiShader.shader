@@ -22,11 +22,11 @@
 
 			sampler2D _MainTex;
 
-      DEFINE_FLOAT_CHANNEL(_HueChannel);
+      DEFINE_FLOAT4_CHANNEL(_HsvOffset);
 
       struct v2f_custom {
         V2F_GRAPHICAL
-        float hue : TEXCOORD1;
+        float3 hsvOffset : TEXCOORD1;
       };
 
       float3 hsv2rgb(float3 c) {
@@ -41,13 +41,13 @@
         v2f_custom o;
         APPLY_BAKED_GRAPHICS(v, o);
 
-        o.hue = getChannel(_HueChannel);
+        o.hsvOffset = getChannel(_HsvOffset);
 
         return o;
       }
 			
 			fixed4 frag (v2f_custom i) : SV_Target {
-        float3 hsv = float3(i.hue, tex2D(_MainTex, i.uv0).rg);
+        float3 hsv = tex2D(_MainTex, i.uv0).rgb + i.hsvOffset;
         return fixed4(hsv2rgb(hsv), 1);
 			}
 			ENDCG
