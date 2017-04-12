@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using Leap.Unity.UI.Interaction;
 using Leap.Unity.GraphicalRenderer;
@@ -39,6 +40,31 @@ public class MainButtonController : MonoBehaviour {
   [SerializeField]
   private InteractionSlider _hueSlider;
 
+  [Header("Sound")]
+  [SerializeField]
+  private SoundPack _soundPack0;
+
+  [SerializeField]
+  private SoundPack _soundPack1;
+
+  [SerializeField]
+  private SoundPack _soundPack2;
+
+  [SerializeField]
+  private SoundPack _soundPack3;
+
+  [SerializeField]
+  private InteractionToggle _soundPack0Toggle;
+
+  [SerializeField]
+  private InteractionToggle _soundPack1Toggle;
+
+  [SerializeField]
+  private InteractionToggle _soundPack2Toggle;
+
+  [SerializeField]
+  private InteractionToggle _soundPack3Toggle;
+
   //Colors are stored in HSV
   private Vector3 _baseColor;
   private Vector3 _hoverColor;
@@ -51,6 +77,25 @@ public class MainButtonController : MonoBehaviour {
   public Vector3 hoverColor { get { return _hoverColor; } }
   public Vector3 pressColor { get { return _pressColor; } }
   public Vector3 toggleColor { get { return _toggleColor; } }
+
+  /// <summary>
+  /// Returns the currently enabled sound pack
+  /// </summary>
+  public SoundPack soundPack {
+    get {
+      if (_soundPack0Toggle.toggled) {
+        return _soundPack0;
+      } else if (_soundPack1Toggle.toggled) {
+        return _soundPack1;
+      } else if (_soundPack2Toggle.toggled) {
+        return _soundPack2;
+      } else if (_soundPack3Toggle.toggled) {
+        return _soundPack3;
+      } else {
+        return default(SoundPack);
+      }
+    }
+  }
 
   private void Awake() {
     _baseColor = _defaultBaseColor.ToHSV();
@@ -106,4 +151,12 @@ public class MainButtonController : MonoBehaviour {
   }
 
   private delegate void ColorDelegate(ref Vector3 hsv);
+
+  [Serializable]
+  public struct SoundPack {
+    public AudioClip hoverSound;
+    public AudioClip touchSound;
+    public AudioClip pressSound;
+    public AudioClip releaseSound;
+  }
 }
