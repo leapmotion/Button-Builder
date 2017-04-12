@@ -267,7 +267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.15, y: 0.0208}
+  m_AnchoredPosition: {x: 0, y: 0.0208}
   m_SizeDelta: {x: 0.2, y: 0.0582}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &127945210
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphic: {fileID: 130824121}
   feature: {fileID: 1734269438}
-  _value: {x: 0, y: 0, z: 0, w: 0}
+  _value: {x: 1, y: 1, z: 1, w: 1}
 --- !u!114 &130824121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,7 +414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.15, y: -0.0231}
+  m_AnchoredPosition: {x: 0, y: -0.0231}
   m_SizeDelta: {x: 0.2, y: 0.1461}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &239956783
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphic: {fileID: 239956785}
   feature: {fileID: 1734269438}
-  _value: {x: 0, y: 0, z: 0, w: 0}
+  _value: {x: 1, y: 1, z: 1, w: 0}
 --- !u!114 &239956785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -670,34 +670,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 265596472}
   m_Script: {fileID: 11500000, guid: 9e0ed5922e911b343b8400997c95409c, type: 3}
---- !u!21 &275367451
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Procedural Graphic Material
-  m_Shader: {fileID: 4800000, guid: 82ce43883d5999342a8512dd45ae94e4, type: 3}
-  m_ShaderKeywords: GRAPHIC_RENDERER_MOVEMENT_TRANSLATION GRAPHIC_RENDERER_VERTEX_UV_0
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 28483880958639112, guid: c261a4c99ff218f48b86cbabd9564519,
-          type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex2:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors: []
 --- !u!1 &287020738
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphic: {fileID: 287020740}
   feature: {fileID: 1734269438}
-  _value: {x: 0, y: 0, z: 0, w: 0}
+  _value: {x: 1, y: 1, z: 1, w: 1}
 --- !u!224 &287020742
 RectTransform:
   m_ObjectHideFlags: 0
@@ -839,7 +811,7 @@ MonoBehaviour:
   _attachedGroup: {fileID: 1734269442}
   _preferredRendererType:
     _fullName: Leap.Unity.GraphicalRenderer.LeapTextRenderer
-  _text: Base
+  _text: Toggle
   _fontStyle: 0
   _fontSize: 8
   _lineSpacing: 1
@@ -1063,7 +1035,7 @@ MonoBehaviour:
   _attachedGroup: {fileID: 1734269442}
   _preferredRendererType:
     _fullName: Leap.Unity.GraphicalRenderer.LeapTextRenderer
-  _text: Base
+  _text: Press
   _fontStyle: 0
   _fontSize: 8
   _lineSpacing: 1
@@ -1162,7 +1134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphic: {fileID: 336016834}
   feature: {fileID: 1734269438}
-  _value: {x: 0, y: 0, z: 0, w: 0}
+  _value: {x: 0, y: 1, z: 1, w: 0}
 --- !u!114 &336016834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,6 +1199,23 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   toggledRestingHeight: 0.05
+  _toggled: 0
+  toggleEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 625493798}
+        m_MethodName: OnChangeColorToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Leap.Unity.UI.Interaction.InteractionToggle+BoolEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &336016837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1315,7 +1304,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 357018681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0, z: 0}
+  m_LocalPosition: {x: 0.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 130824123}
@@ -1428,7 +1417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.15, y: -0.053}
+  m_AnchoredPosition: {x: 0, y: -0.053}
   m_SizeDelta: {x: 0.2, y: 0.205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &565985937
@@ -1651,6 +1640,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   toggledRestingHeight: 0.05
+  _toggled: 0
+  toggleEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Leap.Unity.UI.Interaction.InteractionToggle+BoolEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &595423551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1745,13 +1740,20 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 625493797}
+  - component: {fileID: 625493799}
+  - component: {fileID: 625493798}
+  - component: {fileID: 625493801}
+  - component: {fileID: 625493800}
+  - component: {fileID: 625493802}
+  - component: {fileID: 625493803}
+  - component: {fileID: 625493804}
   m_Layer: 0
   m_Name: MainButtonAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &625493797
 Transform:
   m_ObjectHideFlags: 0
@@ -1762,10 +1764,191 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0.00438498}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 884277209}
   - {fileID: 974216616}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &625493798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625493796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdfce152b6df1364b97546f454471d72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultBaseColor: {r: 0, g: 0, b: 1, a: 1}
+  _defaultHoverColor: {r: 0, g: 1, b: 0, a: 1}
+  _defaultPressColor: {r: 1, g: 0, b: 0, a: 1}
+  _defaultToggleColor: {r: 0, g: 0, b: 0, a: 0}
+  _svSwatchGraphic: {fileID: 287020740}
+  _baseColorToggle: {fileID: 820191856}
+  _hoverColorToggle: {fileID: 1440137366}
+  _pressColorToggle: {fileID: 1762133606}
+  _toggleColorToggle: {fileID: 336016836}
+  _saturationValueSlider: {fileID: 812774096}
+  _hueSlider: {fileID: 239956787}
+--- !u!114 &625493799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625493796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb71699a7372344cb4e7a163c6c6922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selectedGroup: 0
+  _space: {fileID: 0}
+  _groups:
+  - {fileID: 625493801}
+--- !u!114 &625493800
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625493796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00bb44340bd430d44a098a5e36f4de2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 625493799}
+  group: {fileID: 625493801}
+  _useUv0: 1
+  _useUv1: 0
+  _useUv2: 0
+  _useUv3: 0
+  _useColors: 0
+  _bakedTint: {r: 1, g: 1, b: 1, a: 1}
+  _useNormals: 0
+  _shader: {fileID: 4800000, guid: 82ce43883d5999342a8512dd45ae94e4, type: 3}
+  _atlas:
+    _border: 0
+    _padding: 0
+    _mipMap: 1
+    _filterMode: 1
+    _format: 5
+    _maxAtlasSize: 4096
+  _material: {fileID: 1580999122}
+  _meshes: {fileID: 11400000, guid: f34ee3a7e18afd340998d971c93e75a0, type: 2}
+  _packedTextures: {fileID: 11400000, guid: 8f7463e2bd31b1f40baa381b4505dcaa, type: 2}
+  _atlasUvs:
+    _channel0:
+      _keys:
+      - {fileID: 2800000, guid: a3f0eccc207fa224d9e0107375bc8e31, type: 3}
+      _values:
+      - serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1
+        height: 1
+    _channel1:
+      _keys: []
+      _values: []
+    _channel2:
+      _keys: []
+      _values: []
+    _channel3:
+      _keys: []
+      _values: []
+    _nullRects:
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    - serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+  _layer:
+    layerIndex: 0
+  _motionType: 1
+  _createMeshRenderers: 1
+  _renderers:
+  - obj: {fileID: 884277206}
+    filter: {fileID: 884277208}
+    renderer: {fileID: 884277207}
+--- !u!114 &625493801
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625493796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32d8e323bfd9df4d82051c22f44d792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderingMethod: {fileID: 625493800}
+  _features:
+  - {fileID: 625493802}
+  - {fileID: 625493803}
+  _renderer: {fileID: 625493799}
+  _graphics:
+  - {fileID: 974216615}
+  _supportInfo:
+  - support: 0
+    message: 
+  - support: 0
+    message: 
+  _addRemoveSupported: 0
+--- !u!114 &625493802
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625493796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ae2dc675d304041af3c95461f228e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  featureData:
+  - {fileID: 974216622}
+  propertyName: _MainTex
+  channel: 1
+--- !u!114 &625493803
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625493796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8d015f04480d1449e69195fb65cb6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  featureData:
+  - {fileID: 974216614}
+  _channelName: _HsvOffset
+--- !u!114 &625493804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 625493796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dcf9007269cb640a3569b3b1e9f93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &645874997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,6 +2085,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   toggledRestingHeight: 0.05
+  _toggled: 1
+  toggleEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Leap.Unity.UI.Interaction.InteractionToggle+BoolEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &706971764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2471,7 +2660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphic: {fileID: 820191854}
   feature: {fileID: 1734269438}
-  _value: {x: 0, y: 0, z: 0, w: 0}
+  _value: {x: 0, y: 1, z: 1, w: 0}
 --- !u!114 &820191854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2536,6 +2725,23 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   toggledRestingHeight: 0.05
+  _toggled: 1
+  toggleEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 625493798}
+        m_MethodName: OnChangeColorToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Leap.Unity.UI.Interaction.InteractionToggle+BoolEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &820191857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2661,6 +2867,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   toggledRestingHeight: 0.05
+  _toggled: 0
+  toggleEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Leap.Unity.UI.Interaction.InteractionToggle+BoolEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &840809038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3134,6 +3346,75 @@ MonoBehaviour:
   _horizontalAlignment: 1
   _verticalAlignment: 1
   _color: {r: 0, g: 0, b: 0, a: 1}
+--- !u!1 &884277206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 884277209}
+  - component: {fileID: 884277208}
+  - component: {fileID: 884277207}
+  m_Layer: 0
+  m_Name: Graphic Renderer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &884277207
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 884277206}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 1580999122}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &884277208
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 884277206}
+  m_Mesh: {fileID: 43151173088769600, guid: f34ee3a7e18afd340998d971c93e75a0, type: 2}
+--- !u!4 &884277209
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 884277206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 625493797}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &930597589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3200,10 +3481,13 @@ GameObject:
   m_Component:
   - component: {fileID: 974216616}
   - component: {fileID: 974216615}
-  - component: {fileID: 974216614}
+  - component: {fileID: 974216621}
   - component: {fileID: 974216619}
   - component: {fileID: 974216618}
   - component: {fileID: 974216617}
+  - component: {fileID: 974216620}
+  - component: {fileID: 974216622}
+  - component: {fileID: 974216614}
   m_Layer: 0
   m_Name: MainButton
   m_TagString: Untagged
@@ -3211,45 +3495,41 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!23 &974216614
-MeshRenderer:
+--- !u!114 &974216614
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 974216613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c901632b0873746bb872dd08828b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graphic: {fileID: 974216615}
+  feature: {fileID: 625493803}
+  _value: {x: 1, y: 0, z: 0, w: 0}
+--- !u!114 &974216615
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 974216613}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 72b53ef62af32334caf58b589c254653, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &974216615
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 974216613}
-  m_Mesh: {fileID: 4300002, guid: 82c413e7a77ec3d438d12c7c98dbb055, type: 3}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fb726b2ea51dd94d8601fa443872ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _anchor: {fileID: 0}
+  _featureData:
+  - {fileID: 974216622}
+  - {fileID: 974216614}
+  _attachedGroup: {fileID: 625493801}
+  _preferredRendererType:
+    _fullName: Leap.Unity.GraphicalRenderer.LeapBakedRenderer
+  vertexColor: {r: 1, g: 1, b: 1, a: 1}
+  _mesh: {fileID: 4300002, guid: 82c413e7a77ec3d438d12c7c98dbb055, type: 3}
+  _remappableChannels: -1
 --- !u!4 &974216616
 Transform:
   m_ObjectHideFlags: 0
@@ -3261,7 +3541,7 @@ Transform:
   m_LocalScale: {x: 0.035, y: 0.035, z: 0.035}
   m_Children: []
   m_Father: {fileID: 625493797}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -179.99998, z: 0}
 --- !u!114 &974216617
 MonoBehaviour:
@@ -3274,8 +3554,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cba520a60e47274cb1e5afbb57aae0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMaxHeight: {x: 0, y: 0.02}
-  restingHeight: 0.5
+  minMaxHeight: {x: 0, y: 0.025}
+  restingHeight: 0.75
   OnPress:
     m_PersistentCalls:
       m_Calls: []
@@ -3313,13 +3593,51 @@ Rigidbody:
   m_GameObject: {fileID: 974216613}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 20
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &974216620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 974216613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a41e40a0996e6b64c9ad658d7e03d455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: 625493798}
+--- !u!65 &974216621
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 974216613}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0763173, y: 2.0763173, z: 0.20000003}
+  m_Center: {x: 0, y: 0, z: -0.10000002}
+--- !u!114 &974216622
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 974216613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c8779b1bdf86c4dbcbe18f17e44e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graphic: {fileID: 974216615}
+  feature: {fileID: 625493802}
+  texture: {fileID: 2800000, guid: a3f0eccc207fa224d9e0107375bc8e31, type: 3}
 --- !u!1 &999653385
 GameObject:
   m_ObjectHideFlags: 0
@@ -3443,7 +3761,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1092229652}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 127945209}
@@ -3724,7 +4042,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 275367451}
+  - {fileID: 1792454554}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3749,7 +4067,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1310197122}
-  m_Mesh: {fileID: 43803178146203900, guid: f51c8240243d4de469e1a89be3628641, type: 2}
+  m_Mesh: {fileID: 43304585841861548, guid: f51c8240243d4de469e1a89be3628641, type: 2}
 --- !u!4 &1310197125
 Transform:
   m_ObjectHideFlags: 0
@@ -4009,6 +4327,23 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   toggledRestingHeight: 0.05
+  _toggled: 0
+  toggleEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 625493798}
+        m_MethodName: OnChangeColorToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Leap.Unity.UI.Interaction.InteractionToggle+BoolEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &1440137367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4094,7 +4429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphic: {fileID: 1440137370}
   feature: {fileID: 1734269438}
-  _value: {x: 0, y: 0, z: 0, w: 0}
+  _value: {x: 0, y: 1, z: 1, w: 0}
 --- !u!1 &1444326290
 GameObject:
   m_ObjectHideFlags: 0
@@ -4153,7 +4488,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1452760655}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 0, z: 0}
+  m_LocalPosition: {x: -0.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 565985936}
@@ -4203,6 +4538,34 @@ Transform:
   m_Father: {fileID: 2018263429}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1580999122
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Procedural Graphic Material
+  m_Shader: {fileID: 4800000, guid: 82ce43883d5999342a8512dd45ae94e4, type: 3}
+  m_ShaderKeywords: GRAPHIC_RENDERER_MOVEMENT_TRANSLATION GRAPHIC_RENDERER_VERTEX_UV_0
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 28643306932734848, guid: 8f7463e2bd31b1f40baa381b4505dcaa,
+          type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
 --- !u!1 &1592058413
 GameObject:
   m_ObjectHideFlags: 0
@@ -4611,7 +4974,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1734269436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1310197125}
@@ -4706,7 +5069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb71699a7372344cb4e7a163c6c6922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectedGroup: 1
+  _selectedGroup: 0
   _space: {fileID: 0}
   _groups:
   - {fileID: 1734269439}
@@ -4840,7 +5203,7 @@ MonoBehaviour:
     _filterMode: 0
     _format: 5
     _maxAtlasSize: 4096
-  _material: {fileID: 275367451}
+  _material: {fileID: 1792454554}
   _meshes: {fileID: 11400000, guid: f51c8240243d4de469e1a89be3628641, type: 2}
   _packedTextures: {fileID: 11400000, guid: c261a4c99ff218f48b86cbabd9564519, type: 2}
   _atlasUvs:
@@ -5013,6 +5376,23 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   toggledRestingHeight: 0.05
+  _toggled: 0
+  toggleEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 625493798}
+        m_MethodName: OnChangeColorToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Leap.Unity.UI.Interaction.InteractionToggle+BoolEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &1762133607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5098,7 +5478,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphic: {fileID: 1762133610}
   feature: {fileID: 1734269438}
-  _value: {x: 0, y: 0, z: 0, w: 0}
+  _value: {x: 0, y: 1, z: 1, w: 0}
+--- !u!21 &1792454554
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Procedural Graphic Material
+  m_Shader: {fileID: 4800000, guid: 82ce43883d5999342a8512dd45ae94e4, type: 3}
+  m_ShaderKeywords: GRAPHIC_RENDERER_MOVEMENT_TRANSLATION GRAPHIC_RENDERER_VERTEX_UV_0
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 28464743122109498, guid: c261a4c99ff218f48b86cbabd9564519,
+          type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
 --- !u!1 &1874854456
 GameObject:
   m_ObjectHideFlags: 0
@@ -5131,7 +5539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   graphic: {fileID: 1874854458}
   feature: {fileID: 1734269438}
-  _value: {x: 0, y: 0, z: 0, w: 0}
+  _value: {x: 1, y: 1, z: 1, w: 0}
 --- !u!114 &1874854458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5386,7 +5794,7 @@ MonoBehaviour:
   _attachedGroup: {fileID: 1734269442}
   _preferredRendererType:
     _fullName: Leap.Unity.GraphicalRenderer.LeapTextRenderer
-  _text: Base
+  _text: Hover
   _fontStyle: 0
   _fontSize: 8
   _lineSpacing: 1
@@ -5502,6 +5910,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   toggledRestingHeight: 0.05
+  _toggled: 0
+  toggleEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Leap.Unity.UI.Interaction.InteractionToggle+BoolEvent, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &2082205510
 MonoBehaviour:
   m_ObjectHideFlags: 0

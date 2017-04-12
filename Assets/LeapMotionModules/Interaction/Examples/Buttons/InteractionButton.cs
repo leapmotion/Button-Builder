@@ -21,7 +21,6 @@ namespace Leap.Unity.UI.Interaction {
     public float restingHeight = 0.5f;
 
     // State Events
-    [HideInInspector]
     public UnityEvent OnPress = new UnityEvent();
     [HideInInspector]
     public UnityEvent OnUnpress = new UnityEvent();

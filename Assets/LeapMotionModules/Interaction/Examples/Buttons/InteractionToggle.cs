@@ -12,8 +12,8 @@ namespace Leap.Unity.UI.Interaction {
     [Range(0f, 1f)]
     ///<summary> The height that this toggle rests at when it is toggled. </summary>
     public float toggledRestingHeight = 0.25f;
-
-    [Space]
+    
+    [SerializeField]
     private bool _toggled = false;
 
     ///<summary> Whether or not this toggle is currently toggled. </summary>
@@ -33,6 +33,7 @@ namespace Leap.Unity.UI.Interaction {
       }
     }
 
+    [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
     ///<summary> Triggered when this toggle is togggled. </summary>
     public BoolEvent toggleEvent = new BoolEvent();
@@ -42,6 +43,7 @@ namespace Leap.Unity.UI.Interaction {
 
     protected override void Start() {
       base.Start();
+      toggled = toggled;
       _originalRestingHeight = restingHeight;
     }
 
