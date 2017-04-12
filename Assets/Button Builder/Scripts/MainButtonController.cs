@@ -154,9 +154,50 @@ public class MainButtonController : MonoBehaviour {
 
   [Serializable]
   public struct SoundPack {
-    public AudioClip hoverSound;
-    public AudioClip touchSound;
-    public AudioClip pressSound;
-    public AudioClip releaseSound;
+    [SerializeField]
+    private AudioClip _hoverSound;
+
+    [SerializeField]
+    private float _hoverVolume;
+
+    [SerializeField]
+    private AudioClip _touchSound;
+
+    [SerializeField]
+    private float _touchVolume;
+
+    [SerializeField]
+    private AudioClip _pressSound;
+
+    [SerializeField]
+    private float _pressVolume;
+
+    [SerializeField]
+    private AudioClip _releaseSound;
+
+    [SerializeField]
+    private float _releaseVolume;
+
+    public void PlayHoverSound(Vector3 position) {
+      playSound(_hoverSound, _hoverVolume, position);
+    }
+
+    public void PlayTouchSound(Vector3 position) {
+      playSound(_touchSound, _touchVolume, position);
+    }
+
+    public void PlayPressSound(Vector3 position) {
+      playSound(_pressSound, _pressVolume, position);
+    }
+
+    public void PlayReleaseSound(Vector3 position) {
+      playSound(_releaseSound, _releaseVolume, position);
+    }
+
+    private void playSound(AudioClip clip, float volume, Vector3 position) {
+      if (clip != null) {
+        AudioSource.PlayClipAtPoint(clip, position, volume);
+      }
+    }
   }
 }
