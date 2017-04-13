@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using System;
 using System.Collections;
 using Leap.Unity.UI.Interaction;
 using Leap.Unity.GraphicalRenderer;
 
-public class MainButtonController : MonoBehaviour {
+public class MainButtonController : ButtonEffectProvider {
 
   [Header("Color")]
   [SerializeField]
@@ -73,15 +72,15 @@ public class MainButtonController : MonoBehaviour {
 
   private CustomVectorChannelData _svSwatchChannel;
 
-  public Vector3 baseColor { get { return _baseColor; } }
-  public Vector3 hoverColor { get { return _hoverColor; } }
-  public Vector3 pressColor { get { return _pressColor; } }
-  public Vector3 toggleColor { get { return _toggleColor; } }
+  public override Vector3 baseColor { get { return _baseColor; } }
+  public override Vector3 hoverColor { get { return _hoverColor; } }
+  public override Vector3 pressColor { get { return _pressColor; } }
+  public override Vector3 toggleColor { get { return _toggleColor; } }
 
   /// <summary>
   /// Returns the currently enabled sound pack
   /// </summary>
-  public SoundPack soundPack {
+  public override SoundPack soundPack {
     get {
       if (_soundPack0Toggle.toggled) {
         return _soundPack0;
@@ -153,52 +152,5 @@ public class MainButtonController : MonoBehaviour {
 
   private delegate void ColorDelegate(ref Vector3 hsv);
 
-  [Serializable]
-  public class SoundPack {
-    [SerializeField]
-    private AudioClip _hoverSound;
 
-    [SerializeField]
-    private float _hoverVolume = 1;
-
-    [SerializeField]
-    private AudioClip _touchSound;
-
-    [SerializeField]
-    private float _touchVolume = 1;
-
-    [SerializeField]
-    private AudioClip _pressSound;
-
-    [SerializeField]
-    private float _pressVolume = 1;
-
-    [SerializeField]
-    private AudioClip _releaseSound;
-
-    [SerializeField]
-    private float _releaseVolume = 1;
-
-    public void PlayHoverSound(Vector3 position) {
-      playSound(_hoverSound, _hoverVolume, position);
-    }
-
-    public void PlayTouchSound(Vector3 position) {
-      playSound(_touchSound, _touchVolume, position);
-    }
-
-    public void PlayPressSound(Vector3 position) {
-      playSound(_pressSound, _pressVolume, position);
-    }
-
-    public void PlayReleaseSound(Vector3 position) {
-      playSound(_releaseSound, _releaseVolume, position);
-    }
-
-    private void playSound(AudioClip clip, float volume, Vector3 position) {
-      if (clip != null) {
-        AudioSource.PlayClipAtPoint(clip, position, volume);
-      }
-    }
-  }
 }

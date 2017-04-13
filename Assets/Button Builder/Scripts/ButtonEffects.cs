@@ -70,7 +70,7 @@ public class ButtonEffects : MonoBehaviour {
   }
 
   private void onObjectTouchBegin(List<InteractionHand> hands) {
-    _controller.soundPack.PlayPressSound(transform.position);
+    _controller.soundPack.PlayTouchSound(transform.position);
   }
 
   private void onObjectTouchEnd(List<InteractionHand> hands) {
