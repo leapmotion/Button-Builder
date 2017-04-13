@@ -47,7 +47,7 @@
       }
 			
 			fixed4 frag (v2f_custom i) : SV_Target {
-        float3 hsv = tex2D(_MainTex, i.uv0).rgb;
+        float3 hsv = tex2D(_MainTex, i.uv_0).rgb;
         hsv.x += i.hsvOffset.x;
         hsv.yz *= (i.hsvOffset.yz);
 
