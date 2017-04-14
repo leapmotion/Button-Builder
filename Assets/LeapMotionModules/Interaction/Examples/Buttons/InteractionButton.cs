@@ -22,7 +22,6 @@ namespace Leap.Unity.UI.Interaction {
 
     // State Events
     public UnityEvent OnPress = new UnityEvent();
-    [HideInInspector]
     public UnityEvent OnUnpress = new UnityEvent();
 
     //Public State variables
@@ -191,6 +190,13 @@ namespace Leap.Unity.UI.Interaction {
         _lastDepressor = collision.rigidbody;
         _localDepressorPosition = transform.InverseTransformPoint(collision.rigidbody.position);
       }
+    }
+
+    public void setMinHeight(float minHeight) {
+      minMaxHeight = new Vector2(minHeight / transform.parent.lossyScale.z, minMaxHeight.y);
+    }
+    public void setMaxHeight(float maxHeight) {
+      minMaxHeight = new Vector2(minMaxHeight.x, maxHeight / transform.parent.lossyScale.z);
     }
   }
 }

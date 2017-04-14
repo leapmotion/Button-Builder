@@ -24,7 +24,9 @@ namespace Leap.Unity.UI.Interaction {
       set {
         if (_toggled != value) {
           _toggled = value;
-          toggleEvent.Invoke(toggled);
+          if (_toggled) {
+            toggleEvent.Invoke();
+          }
           restingHeight = toggled ? toggledRestingHeight : _originalRestingHeight;
           rigidbody.WakeUp();
           depressedThisFrame = value;
@@ -36,15 +38,18 @@ namespace Leap.Unity.UI.Interaction {
     [System.Serializable]
     public class BoolEvent : UnityEvent<bool> { }
     ///<summary> Triggered when this toggle is togggled. </summary>
-    public BoolEvent toggleEvent = new BoolEvent();
+    public UnityEvent toggleEvent = new UnityEvent();
 
     ///<summary> The minimum and maximum heights the button can exist at. </summary>
     private float _originalRestingHeight;
 
     protected override void Start() {
       base.Start();
-      toggled = toggled;
       _originalRestingHeight = restingHeight;
+      if (toggled) {
+        restingHeight = toggledRestingHeight;
+        toggleEvent.Invoke();
+      }
     }
 
     protected virtual void OnEnable() {

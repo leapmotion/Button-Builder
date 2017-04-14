@@ -23,6 +23,7 @@ namespace Leap.Unity.UI.Interaction {
     [Tooltip("The minimum and maximum vertical extents that the slider can slide to in world space.")]
     public Vector2 verticalSlideLimits = new Vector2(0f, 0f);
 
+    [System.Serializable]
     public class FloatEvent : UnityEvent<float> { }
     ///<summary> Triggered while this slider is depressed. </summary>
     public FloatEvent horizontalSlideEvent = new FloatEvent();
@@ -67,7 +68,7 @@ namespace Leap.Unity.UI.Interaction {
       //Conversion of limits to local space
       _HorizontalSlideLimits = horizontalSlideLimits / transform.parent.lossyScale.x;
       _VerticalSlideLimits = verticalSlideLimits / transform.parent.lossyScale.y;
-      CalculateSliderValues();
+      //CalculateSliderValues();
     }
 
     protected override void Update() {
