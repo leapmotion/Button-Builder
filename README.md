@@ -1,16 +1,8 @@
-# Leap Motion Unity Modules
+# Button Builder #
 
-To download Leap Motion's latest stable modules as .unitypackages, visit [our Unity developer site][devsite].
+This repository contains the source code for the Button Builder demo!  This demo was primary constructed to show how the [Interaction Engine][] and the [Graphic Renderer][] can work together.  
 
-For detailed information about using our Unity Modules, or contributing to this repo, [check out the Wiki][wiki]!
-
-**UnityModules supports Unity 5.5 and up.**
-
-## This repository
-
-This repository contains code for Leap Motion's Unity Modules, easy-to-use tools for integrating the Leap Motion Controller in Unity projects, and various utilities for VR and AR projects.
-
-**Note that this repository also contains code for work-in-progress modules, tentative modules, or older modules that may be unsupported.** We recommend using the packages available on the [developer site][devsite] unless you're planning on contributing or you are otherwise feeling *particularly hardcore*.
-
-[devsite]: https://developer.leapmotion.com/unity/ "Leap Motion Unity Developer site"
-[wiki]: https://github.com/leapmotion/UnityModules/wiki "Leap Motion Unity Modules Wiki"
+At a high level, this demo shows off:
+ - `Graphical optimizations` - Through the use of the Graphic Renderer, the scene can be rendered in just a few draw calls!  
+ - `Intuitive interaction` - The Interaction Engine allows all of the interface elements to respond in an intuitive physical way.
+ - `Curved spaces` - Due to the tight integration of curved spaces into both the Graphic Renderer and the Interaction Engine, the entire interface can be trivially warped into a curved space, and everything still works as you indend!
