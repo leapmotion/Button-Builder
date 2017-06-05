@@ -19,7 +19,7 @@
     #define GRAPHIC_RENDERER_BLEND_SHAPES
 
     #pragma shader_feature _ GRAPHIC_RENDERER_CYLINDRICAL GRAPHIC_RENDERER_SPHERICAL
-    #include "Assets/LeapMotionModules/GraphicRenderer/Resources/BakedRenderer.cginc"
+    #include "Assets/LeapMotion/Modules/GraphicRenderer/Resources/BakedRenderer.cginc"
     #include "UnityCG.cginc"
 
     struct Input {
